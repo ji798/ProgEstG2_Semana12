@@ -1,0 +1,42 @@
+LABORATORIO FORMATIVO: GRAFOS EN PYTHON
+Programación estructurada - Primer año
+
+1. Reto 1 · Reconoce la estructura
+Crea una función contar_vertices(grafo) y otra contar_aristas(grafo). Recuerda que cada arista no dirigida está registrada en las listas de ambos extremos.
+Pruebas:
+print(contar_vertices(grafo))
+print(contar_aristas(grafo))
+Resultado esperado: Vértices: 6. Aristas: 7.
+
+2. Reto 2 · Busca conexiones directas
+Implementa estan_conectados(grafo, origen, destino). Debe devolver True si existe una arista directa; de lo contrario, False. Valida vértices inexistentes.
+Pruebas:
+print(estan_conectados(grafo, "A", "B"))
+print(estan_conectados(grafo, "A", "F"))
+print(estan_conectados(grafo, "X", "A"))
+Resultado esperado: A y B: True. A y F: False. X y A: False.
+
+3. Reto 3 · Amplía la red
+Implementa agregar_vertice(grafo, vertice) y agregar_arista(grafo, origen, destino). Evita vértices repetidos, aristas duplicadas y lazos (un nodo conectado consigo mismo). Decide cómo tratar vértices inexistentes y documenta tu decisión.
+Pruebas:
+agregar_vertice(grafo, "G")
+agregar_arista(grafo, "F", "G")
+print(grafo["F"])
+print(grafo["G"])
+Resultado esperado: Al agregar G y la conexión F–G, G debe aparecer en los vecinos de F y F en los de G.
+
+4. Reto 4 · Explora sin repetir
+Implementa recorrido_amplitud(grafo, inicio) usando una lista como cola, una lista de visitados y un ciclo while. Devuelve el orden de visita. No uses clases ni bibliotecas.
+Pruebas:
+print(recorrido_amplitud(grafo, "A"))
+Resultado esperado: Desde A, con el orden original de vecinos: A, B, C, D, E, F.
+
+5. Reto 5 · Encuentra una ruta
+Implementa existe_ruta(grafo, origen, destino), que devuelva True cuando exista un camino, aunque los nodos no sean vecinos directos. Debe terminar incluso si hay ciclos.
+Pruebas:
+print(existe_ruta(grafo, "A", "F"))
+print(existe_ruta(grafo, "A", "A"))
+print(existe_ruta(grafo, "A", "X"))
+Resultado esperado: A hasta F: True. A hasta A: True. A hasta X: False.
+
+ENTREGA: grafos_apellido.py, captura de ejecución y reflexión breve. No usar clases ni networkx.
